@@ -64,43 +64,4 @@ class CoinsControllerTest extends WebTestCase
         $response = $this->client->getResponse();
         self::assertEquals(Response::HTTP_OK, $response->getStatusCode());
     }
-
-    public function test_it_returns_error_when_invalid_body(): void
-    {
-        // Act
-        $this->client->request(
-            'POST', '/coins', [], [],
-            ['CONTENT_TYPE' => 'application/json'],
-            json_encode([
-                "invalid_body" => null
-            ])
-        );
-        $response = $this->client->getResponse();
-
-        // Assert
-        self::assertEquals(Response::HTTP_BAD_REQUEST, $response->getStatusCode());
-    }
-
-    public function test_it_deletes_a_coin(): void
-    {
-        // Act
-        $this->client->request('DELETE', "/coins/63f125dd-7597-46d9-951e-271c8a815df9");
-        $response = $this->client->getResponse();
-
-        // Assert
-        self::assertEquals(Response::HTTP_OK, $response->getStatusCode());
-        $this->client->request('GET', "/coins/63f125dd-7597-46d9-951e-271c8a815df9");
-        $response = $this->client->getResponse();
-        self::assertEquals(Response::HTTP_NOT_FOUND, $response->getStatusCode());
-    }
-
-    public function test_it_returns_error_when_deleting_non_existent_coin(): void
-    {
-        // Act
-        $this->client->request('DELETE', "/coins/non-existent-coin");
-        $response = $this->client->getResponse();
-
-        // Assert
-        self::assertEquals(Response::HTTP_NOT_FOUND, $response->getStatusCode());
-    }
 }
