@@ -1,0 +1,23 @@
+App\Domain\Coin:
+    type: entity
+    table: coin
+    id:
+        id:
+            type: string
+            generator: { strategy: NONE }
+    fields:
+        description:
+            type: string
+            nullable: false
+        amount:
+            type: float
+            nullable: false
+        currency:
+            type: string
+            nullable: false
+        year:
+            type: string
+            nullable: false
+        valueEUR:
+            type: string
+            nullable: true

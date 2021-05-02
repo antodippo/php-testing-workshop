@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  coins:
+    working_dir: /var/www/coins
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - 8080:80
+    volumes:
+      - .:/var/www/coins:delegated
+    environment:
+      XDEBUG_MODE: "coverage"

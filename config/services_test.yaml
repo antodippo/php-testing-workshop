@@ -1,0 +1,6 @@
+services:
+    _defaults:
+        public: true
+
+    App\Infrastructure\CoinValuePersister\CoinRatesProvider: '@App\Infrastructure\CoinValuePersister\StubCoinRatesProvider'
+

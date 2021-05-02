@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "47febd91-f2be-47b2-98c5-0f0a4e643cb7",
+		"name": "Testing workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New coin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"A beautiful coin\",\n    \"amount\": \"2\",\n    \"currency\": \"USD\",\n    \"year\": \"2007\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/coins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"coins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete coin",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/coins/a92f10d3-e83a-4968-b703-923aa518ada5ssss",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"coins",
+						"a92f10d3-e83a-4968-b703-923aa518ada5ssss"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get coin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/coins/9f98bf6a-0c63-48d3-b87f-ed76ba29fb9e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"coins",
+						"9f98bf6a-0c63-48d3-b87f-ed76ba29fb9e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List coins",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/coins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"coins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get rates",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.ratesapi.io/api/latest?base=EUR",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ratesapi",
+						"io"
+					],
+					"path": [
+						"api",
+						"latest"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "EUR"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
