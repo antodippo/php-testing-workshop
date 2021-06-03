@@ -54,7 +54,7 @@ class Coin
         return $this->id;
     }
 
-    public function getCurrency()
+    public function getCurrency(): string
     {
         return $this->currency;
     }

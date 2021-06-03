@@ -15,7 +15,7 @@ class CoinValuePersisterCommandTest extends KernelTestCase
 {
     use FixturesTrait;
 
-    public function test_it_persists_value_of_coins()
+    public function test_it_persists_value_of_coins(): void
     {
         // Arrange
         $kernel = static::createKernel();

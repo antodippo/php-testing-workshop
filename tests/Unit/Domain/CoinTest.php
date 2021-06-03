@@ -30,7 +30,7 @@ class CoinTest extends TestCase
             'year' => '2012',
             'valueEUR' => null
         ];
-        TestCase::assertSame($expectedArray, $actualArray);
+        self::assertSame($expectedArray, $actualArray);
     }
 
     public function test_it_updates_the_value_in_euro(): void
@@ -61,9 +61,11 @@ class CoinTest extends TestCase
 
     public function test_it_cannot_be_created_with_invalid_currency(): void
     {
+        // Assert
         self::expectException(InvalidCurrencyException::class);
         self::expectExceptionMessage("'ZZZ' is not a valid currency");
 
+        // Arrange, Act
         $coin = Coin::fromArray([
             'id' => '6cfa0d5a-1cb9-41c3-a292-d926723c686f',
             'description' => 'A beautiful coin',

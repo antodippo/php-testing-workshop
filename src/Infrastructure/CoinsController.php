@@ -50,13 +50,13 @@ class CoinsController
     #[Route('/coins', methods: ['POST'])]
     public function save(Request $request): Response
     {
-        $coinArray = $request->toArray();
-        if (! $this->coinPayloadValidator->validate($coinArray)) {
+        $payload = $request->toArray();
+        if (! $this->coinPayloadValidator->validate($payload)) {
             return new Response('', Response::HTTP_BAD_REQUEST);
         }
-        $coinArray['id'] = Uuid::uuid4()->toString();
+        $payload['id'] = Uuid::uuid4()->toString();
 
-        $coin = Coin::fromArray($coinArray);
+        $coin = Coin::fromArray($payload);
         $this->coinRepository->save($coin);
 
         return new Response($coin->getId(), Response::HTTP_CREATED);
