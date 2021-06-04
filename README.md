@@ -16,7 +16,7 @@ Install dependencies with Composer:
 ```make dependencies```
 
 Run migration to build databases (for dev and test environments):
-```make migrations```
+```make migrations-dev```
 ```make migrations-test```
 
 

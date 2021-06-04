@@ -13,7 +13,7 @@ stop-with-volumes: ## Stop Docker containers and removes volumes
 dependencies: ## Run Composer install
 	docker-compose run --rm coins composer install
 
-migrations: ## Run DB migrations in dev environment
+migrations-dev: ## Run DB migrations in dev environment
 	docker-compose run --rm coins bin/console doctrine:migrations:migrate --env=dev --no-interaction
 
 migrations-test: ## Run DB migrations in test environment
